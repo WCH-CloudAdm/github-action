@@ -15,7 +15,7 @@ terraform {
   required_version = ">= 1.1.0"
 
   cloud {
-    organization = "Terraform-lab-wchavez"
+    organization = "orion-global"
 
     workspaces {
       name = "github-action"
@@ -78,5 +78,5 @@ resource "aws_security_group" "web-sg" {
 }
 
 output "web-address" {
-  value = "${aws_instance.web.public_dns}:8080"
+  value = "${aws_instance.web.public_dns}:80"
 }
