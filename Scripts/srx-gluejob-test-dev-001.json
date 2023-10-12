@@ -1,0 +1,31 @@
+{
+  "name" : "srx-gluejob-test-dev-001",
+  "description" : "This is script to create large files from small files ",
+  "role" : "arn:aws:iam::346318995894:role/srx-engage-glue-dev-migrationdb",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 2
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://srx-s3-test-dev-001/Scripts/script.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "true",
+    "--job-language" : "python"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "github-action",
+    "branch" : "main",
+    "folder" : "Scripts"
+  }
+}
